@@ -9,7 +9,7 @@ import warnings
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-# Load and prepare the dataset
+
 df = pd.read_csv("C:\\Users\\vijay\\Downloads\\heart_disease_data.csv")
 
 X = df.drop(columns='target', axis=1)
@@ -17,11 +17,9 @@ Y = df['target']
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, stratify=Y, random_state=2)
 
-# Train the model
 model = LogisticRegression(max_iter=200)
 model.fit(X_train, Y_train)
 
-# Flask App
 app = Flask(__name__)
 
 @app.route('/')
@@ -31,7 +29,7 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        # Retrieve form data
+
         input_data = [
             float(request.form['age']),
             float(request.form['sex']),
@@ -46,15 +44,14 @@ def predict():
             float(request.form['slope']),
             float(request.form['ca']),
             float(request.form['thal'])
-        ]  # Exclude the 'target' column
-
-        # Convert input_data to DataFrame
+        ]  
+        
         target_df = pd.DataFrame([input_data], columns=X.columns)
 
-        # Prediction
+
         prediction = model.predict(target_df)[0]
 
-        # Display results
+
         if prediction == 0:
             result = "Good News: Patient doesn't have heart disease."
         else:
