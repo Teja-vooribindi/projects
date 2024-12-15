@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Heart Stroke Predictor</title>
+    <style>
+        body {
+            display: grid;
+            height: 100vh;
+            margin: 0;
+            place-items: center;
+            background: linear-gradient(90deg, rgb(11, 0, 36) 0%, rgba(69, 69, 255, 1) 38%, rgba(0, 212, 255, 1) 100%);
+            padding: 20px;
+        }
+
+        .head {
+            color: white;
+            font-size: 30px;
+            font-family: "Roboto";
+            padding-bottom: 10px;
+        }
+        .para {
+            color: rgb(116, 241, 214);
+            font-size: 50px;
+            font-family: "Roboto";
+        }
+        .btn {
+            height: 40px;
+            width: 130px;
+            border-radius: 10px;
+            background-color: blue;
+            border-width: 0px;
+            text-align: center;
+        }
+
+        .bAAi {
+            font-size: 25px;
+            color: white;
+            border-radius: 10px;
+            font-weight: bold;
+            text-decoration: none;
+
+        }
+
+        .form {
+            z-index: 1;
+            border-radius: 20px;
+            position: relative;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            border-right: 1px solid rgba(255, 255, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 26px 42px rgba(0, 0, 0, 0.1);
+            width: 40em;
+            color: white;
+        }
+
+        .card {
+            padding: 20px;
+        }
+
+
+        .circle {
+            position: absolute;
+            height: 120px;
+            width: 120px;
+            border-radius: 50%;
+        }
+
+        .circleLeft {
+            top: -55px;
+            left: -50px;
+            background-color: #44c9ff;
+        }
+
+        .circleRight {
+            margin-top: -50px;
+            left: 600px;
+            background-color: #00006f;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 class="head">Heart Stroke Predictor</h2>
+    <div class="form">
+        <form class="card">
+            <h1>Here is it your result</h1>
+            <p class="para">{{ result }}</p>
+            <div class="btn">
+                <a class="bAAi" href="/">Go Back</a>
+            </div>
+        </form>
+        <div class="circle circleLeft"></div>
+        <div class="circle circleRight"></div>
+
+    </div>
+</body>
+
+</html>
